@@ -1,7 +1,7 @@
 import { token } from "../../../helpers/auth"
 import useFetch from "../../../hooks/useFetch"
 import Loader from "../../atoms/Loader"
-import React from 'react';
+import React from "react"
 const Sales = () => {
   const { data, loading, error } = useFetch("admin/invoices", {
     headers: {

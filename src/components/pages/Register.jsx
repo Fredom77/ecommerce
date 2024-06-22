@@ -3,11 +3,12 @@ import { useState } from "react"
 import { Link, useNavigate } from "react-router-dom"
 import { API_URL } from "../../constants/env"
 import LoginTemplate from "../templates/LoginTemplate"
-import React from 'react';
+import React from "react"
+
 const Register = () => {
   const nav = useNavigate()
 
-  const [error, setError] = useState()
+  const [error, setError] = useState(null)
   const handleSubmit = (e) => {
     e.preventDefault()
     const data = {
@@ -24,8 +25,8 @@ const Register = () => {
         nav("/login")
       })
       .catch((err) => {
-        setError(err)
-        console.log(err)
+        setError(err.response ? err.response.data : "Server error")
+        console.error(err)
       })
   }
 
@@ -38,6 +39,7 @@ const Register = () => {
             placeholder="Nombre completo"
             name="fullname"
             required
+            autoComplete="name"
           />
         </div>
         <div className="mb-4">
@@ -46,6 +48,7 @@ const Register = () => {
             placeholder="Correo electrónico"
             name="email"
             required
+            autoComplete="email"
           />
         </div>
         <div className="mb-4">
@@ -54,6 +57,7 @@ const Register = () => {
             placeholder="Contraseña"
             name="password"
             required
+            autoComplete="new-password"
           />
         </div>
         <div className="text-center pt-1 mb-12 pb-1">
@@ -66,7 +70,7 @@ const Register = () => {
         </div>
         {error && (
           <p className="text-center p-2 bg-red-100 text-red-800">
-            {error?.response?.data.errors[0].message}
+            {error.errors ? error.errors[0].message : "Error de registro"}
           </p>
         )}
       </form>

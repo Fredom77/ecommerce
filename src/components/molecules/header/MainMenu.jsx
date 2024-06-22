@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom"
 import { CartContext } from "../../../context/CartContext"
 import { UserContext } from "../../../context/UserContext"
 import { deleteToken, token } from "../../../helpers/auth"
-import React from 'react';
+import React from "react"
 const MainMenu = () => {
   const nav = useNavigate()
   const { userData, setUserData } = useContext(UserContext)

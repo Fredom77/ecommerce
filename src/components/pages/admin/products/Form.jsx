@@ -4,7 +4,7 @@ import { useNavigate, useParams } from "react-router-dom"
 import { API_URL } from "../../../../constants/env"
 import { token } from "../../../../helpers/auth"
 import Loader from "../../../atoms/Loader"
-import React from 'react';
+import React from "react"
 const Form = () => {
   const nav = useNavigate()
   const params = useParams()

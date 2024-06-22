@@ -15,10 +15,10 @@ const LoginTemplate = ({ children, title }) => {
                         alt="logo"
                       />
                       <h4 className="text-xl font-semibold mt-1 mb-8 pb-1">
-                        { title }
+                        {title}
                       </h4>
                     </div>
-                    { children }
+                    {children}
                   </div>
                 </div>
                 <div className="bg-gradient lg:w-6/12 flex items-center lg:rounded-r-lg rounded-b-lg lg:rounded-bl-none">

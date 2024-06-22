@@ -1,19 +1,19 @@
-import React from 'react';  // Asegúrate de importar React
-import { createBrowserRouter } from "react-router-dom";
-import Home from "../components/pages/Home";
-import Error404 from "../components/pages/Error404";
-import Products from "../components/pages/Products";
-import App from "../components/templates/App";
-import Login from "../components/pages/Login";
-import Register from "../components/pages/Register";
-import Form from "../components/pages/admin/products/Form";
-import Table from "../components/pages/admin/products/Table";
-import Admin from "../components/templates/Admin";
-import Product from "../components/pages/Product";
-import Cart from "../components/pages/Cart";
-import Payment from "../components/pages/Payment";
-import Profile from "../components/pages/Profile";
-import Sales from "../components/pages/admin/Sales";
+import React from "react"
+import { createBrowserRouter } from "react-router-dom"
+import Home from "../components/pages/Home"
+import Error404 from "../components/pages/Error404"
+import Products from "../components/pages/Products"
+import App from "../components/templates/App"
+import Login from "../components/pages/Login"
+import Register from "../components/pages/Register"
+import Form from "../components/pages/admin/products/Form"
+import Table from "../components/pages/admin/products/Table"
+import Admin from "../components/templates/Admin"
+import Product from "../components/pages/Product"
+import Cart from "../components/pages/Cart"
+import Payment from "../components/pages/Payment"
+import Profile from "../components/pages/Profile"
+import Sales from "../components/pages/admin/Sales"
 
 const router = createBrowserRouter([
   {
@@ -77,6 +77,6 @@ const router = createBrowserRouter([
       },
     ],
   },
-]);
+])
 
-export default router;
+export default router

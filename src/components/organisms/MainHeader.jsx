@@ -1,6 +1,6 @@
-import Logo from "../molecules/header/logo";
-import MainMenu from "../molecules/header/MainMenu";
-import React from 'react';
+import Logo from "../molecules/header/logo"
+import MainMenu from "../molecules/header/MainMenu"
+import React from "react"
 const MainHeader = () => {
   return (
     <div className="fixed bg-gradient w-full z-10">
@@ -9,7 +9,7 @@ const MainHeader = () => {
         <MainMenu />
       </div>
     </div>
-  );
+  )
 }
 
-export default MainHeader;
+export default MainHeader

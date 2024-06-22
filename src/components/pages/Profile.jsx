@@ -1,15 +1,16 @@
+/* eslint-disable prettier/prettier */
 import { useContext } from "react"
 import { UserContext } from "../../context/UserContext"
 import { token } from "../../helpers/auth"
 import useFetch from "../../hooks/useFetch"
 import Loader from "../atoms/Loader"
-import React from 'react';
+import React from "react"
 const Profile = () => {
   const { userData } = useContext(UserContext)
   const { data, loading, error } = useFetch("private/invoices", {
     headers: {
       Authorization: `Bearer ${token()}`,
-    },
+    }
   })
 
   if (loading) return <Loader />

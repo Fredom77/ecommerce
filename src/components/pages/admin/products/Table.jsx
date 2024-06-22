@@ -28,8 +28,6 @@ const Table = () => {
   if (loading) return <Loader />;
   if (error) return <div>{error?.message}</div>;
 
-  
-
   return (
     <div className="max-w-256 m-auto">
       <section className="pt-10">

@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react"
 const Loader = () => (
   <div className="p-16 max-w-256 m-auto flex justify-center">
     <section className="pt-16">

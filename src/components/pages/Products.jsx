@@ -3,7 +3,8 @@ import { useState } from "react"
 import useFetch from "../../hooks/useFetch"
 import Loader from "../atoms/Loader"
 import ProductCard from "../molecules/ProductCard"
-import React from 'react';
+import React from "react"
+
 const Products = () => {
   const { data, loading, error } = useFetch("public/products")
   const [result, setResult] = useState([])

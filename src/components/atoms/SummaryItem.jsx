@@ -1,7 +1,7 @@
 import { useContext } from "react"
 import { CartContext } from "../../context/CartContext"
 import { formatPrice } from "../../helpers/number"
-import React from 'react';
+import React from "react"
 const SummaryItem = ({ product }) => {
   const { dispatch } = useContext(CartContext)
 

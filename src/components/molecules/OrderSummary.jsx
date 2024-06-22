@@ -3,8 +3,8 @@ import { useContext } from "react"
 import { Link } from "react-router-dom"
 import { API_URL } from "../../../env"
 import { CartContext } from "../../context/CartContext"
-import { token } from "../../helpers/Auth"
-import SummaryAmount from "../Atoms/SummaryAmount"
+import { token } from "../..helpers/Auth"
+import SummaryAmount from "../atoms/SummaryAmount"
 import PaypalPayment from "./PaypalPayment"
 
 const OrderSummary = ({ total, order, setOrder }) => {
@@ -70,5 +70,4 @@ const OrderSummary = ({ total, order, setOrder }) => {
     </section>
   )
 }
-
 export default OrderSummary

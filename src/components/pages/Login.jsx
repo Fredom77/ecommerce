@@ -6,7 +6,7 @@ import { API_URL } from "../../constants/env"
 import { UserContext } from "../../context/UserContext"
 import { setToken } from "../../helpers/auth"
 import LoginTemplate from "../templates/LoginTemplate"
-import React from 'react';
+import React from "react"
 const Login = () => {
   const nav = useNavigate()
   const { setUserData } = useContext(UserContext)

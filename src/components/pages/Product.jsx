@@ -3,15 +3,15 @@ import { useParams } from "react-router-dom"
 import { CartContext } from "../../context/CartContext"
 import useFetch from "../../hooks/useFetch"
 import Badge from "../atoms/Badge"
-import BuyButton from "../atoms/BuyButton"
 import Loader from "../atoms/Loader"
+import BuyButton from "../atoms/BuyButton"
 import ProductRating from "../atoms/ProductRating"
 import PriceDetails from "../molecules/PriceDetails"
 import ProductDetails from "../molecules/ProductDetails"
 import ProductInformation from "../molecules/ProductInformation"
 import RelatedProducts from "../molecules/RelatedProducts"
 import ShareProduct from "../molecules/ShareProduct"
-import React from 'react';
+import React from "react"
 const Product = () => {
   const { state, dispatch } = useContext(CartContext)
   const params = useParams()

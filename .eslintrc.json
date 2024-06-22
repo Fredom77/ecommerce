@@ -1,0 +1,17 @@
+{
+  "extends": ["eslint:recommended", "plugin:react/recommended", "prettier"],
+  "plugins": ["react", "prettier"],
+  "env": {
+    "browser": true,
+    "node": true,
+    "es2020": true
+  },
+  "rules": {
+    "prettier/prettier": ["error", { "semi": false }]
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  }
+}

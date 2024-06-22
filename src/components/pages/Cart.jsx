@@ -1,56 +1,58 @@
-import axios from "axios";
-import { useState, useContext } from "react";
-import { Link } from "react-router-dom";
-import { API_URL } from "../../constants/env";
-import { CartContext } from "../../context/CartContext";
-import { token } from "../../helpers/auth";
-import SummaryItem from "../atoms/SummaryItem";
-import PayPalPayment from "../organisms/PayPalPayment";
-import React from 'react';
+import axios from "axios"
+import { useState, useContext } from "react"
+import { Link } from "react-router-dom"
+import { API_URL } from "../../constants/env"
+import { CartContext } from "../../context/CartContext"
+import { token } from "../../helpers/auth"
+import SummaryItem from "../atoms/SummaryItem"
+import PayPalPayment from "../organisms/PayPalPayment"
+import React from "react"
 
 function Cart() {
-  const { state } = useContext(CartContext);
-  const [order, setOrder] = useState();
-  const [error, setError] = useState(null);
+  const { state } = useContext(CartContext)
+  const [order, setOrder] = useState()
+  const [error, setError] = useState(null)
 
-  let value = 0;
-  state.cart.forEach((c) => (value += c.price));
+  let value = 0
+  state.cart.forEach((c) => (value += c.price))
 
   const handleOrder = () => {
     const products = state.cart.map((p) => ({
       product_id: p.id,
       amount: 1,
       unit_price: p.price,
-    }));
+    }))
 
-    const data = { products };
+    const data = { products }
 
-    console.log("Request data:", data);
+    console.log("Request data:", data)
 
     axios
       .post(`${API_URL}/private/purchase-orders`, data, {
         headers: {
           Authorization: `Bearer ${token()}`,
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
       })
       .then((resp) => {
-        console.log("Response data:", resp.data);
-        setOrder(resp.data.data);
-        setError(null);
+        console.log("Response data:", resp.data)
+        setOrder(resp.data.data)
+        setError(null)
       })
       .catch((err) => {
-        console.error("Failed to create order:", err);
+        console.error("Failed to create order:", err)
         if (err.response) {
-          console.error("Response error data:", err.response.data);
+          console.error("Response error data:", err.response.data)
         }
         if (err.response && err.response.data && err.response.data.errors) {
-          setError(`Failed to create order: ${err.response.data.errors.join(', ')}`);
+          setError(
+            `Failed to create order: ${err.response.data.errors.join(", ")}`
+          )
         } else {
-          setError("Failed to create order. Please try again.");
+          setError("Failed to create order. Please try again.")
         }
-      });
-  };
+      })
+  }
 
   return (
     <div className="max-w-256 m-auto">
@@ -89,7 +91,7 @@ function Cart() {
         </section>
       </div>
     </div>
-  );
+  )
 }
 
-export default Cart;
+export default Cart

@@ -1,5 +1,5 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from "react"
+import PropTypes from "prop-types"
 
 const ProductDetailItem = ({ type, value }) => {
   return (
@@ -7,15 +7,12 @@ const ProductDetailItem = ({ type, value }) => {
       <span className="font-semibold">{type}</span>
       <span className="text-gray-600">{value}</span>
     </div>
-  );
+  )
 }
 
 ProductDetailItem.propTypes = {
   type: PropTypes.string.isRequired,
-  value: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.number
-  ]).isRequired,
-};
+  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+}
 
-export default ProductDetailItem;
+export default ProductDetailItem
